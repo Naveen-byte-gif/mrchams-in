@@ -1,0 +1,64 @@
+/* styles/OurServices.css */
+
+.services-section {
+  background-color: #f7f7f7;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #a90000;
+  font-weight: 600;
+}
+
+.service-card .card-img-top {
+  object-fit: cover;
+  height: 200px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.service-card .card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.service-card .card-text {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+/* Carousel arrows */
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 100%;
+  /* transform: translateY(-50%); */
+  font-size: 2rem;
+  color: #a90000;
+  background: #a90000;
+  border: none;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.carousel-control-prev {
+  left: -30px;
+}
+
+.carousel-control-next {
+  right: -30px;
+}
+
+/* On small screens: show all cards stacked */
+@media (max-width: 768px) {
+  .service-card {
+    display: block !important;
+    margin-bottom: 2rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    display: none;
+  }
+}

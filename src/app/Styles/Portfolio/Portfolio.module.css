@@ -1,0 +1,80 @@
+/* ---- Card ---- */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 18px;
+  display: flex;
+  gap: 18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  align-items: center;
+}
+
+/* Desktop hover */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.12);
+}
+
+/* ---- Image Wrapper ---- */
+.imgWrapper {
+  min-width: 160px;
+  min-height: 160px;
+  max-width: 160px;
+  max-height: 160px;
+  background: #f9f9f9;
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---- Text Section ---- */
+.textContent {
+  flex: 1;
+}
+
+.textContent p {
+  margin-bottom: 12px;
+}
+
+/* ---- Link Button ---- */
+.linkBtn {
+  color: #d9534f;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.linkBtn:hover {
+  color: #b52a28;
+}
+
+/* ---- Responsive ---- */
+
+/* Mobile - Image top, text bottom */
+@media (max-width: 768px) {
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imgWrapper {
+    margin-bottom: 15px;
+  }
+}
+
+/* ---- Animations ---- */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.7s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

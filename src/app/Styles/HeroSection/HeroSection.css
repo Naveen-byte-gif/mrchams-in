@@ -1,0 +1,82 @@
+.pageHeroBackground {
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 68% 94%, 0 100%);
+}
+
+.productTitle {
+  color: var(--neturals-background-neturals-base-white, #fff);
+  font-family: Poppins;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 600;
+  text-align: center;
+}
+
+.productTitleContainer {
+  position: absolute;
+  top: 50%;
+  left: 49%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.heroDec {
+  font-family: Poppins;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+
+@media (max-width: 335px) {
+  .productTitle {
+    font-size: 8px;
+  }
+  .heroDec {
+    font-size: 5px;
+  }
+}
+@media only screen and (min-width: 336px) and (max-width: 576px) {
+  .productTitle {
+    font-size: 12px;
+  }
+  .heroDec {
+    font-size: 10px;
+  }
+  .pageHeroBackground {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .productTitle {
+    font-size: 16px;
+  }
+  .heroDec {
+    font-size: 12px;
+  }
+  .pageHeroBackground {
+    margin-top: 80px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+  .productTitle {
+    font-size: 22px;
+  }
+  .heroDec {
+    font-size: 15px;
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .productTitle {
+    font-size: 30px;
+  }
+  .heroDec {
+    font-size: 17px;
+  }
+  .pageHeroBackground {
+    margin-top: 80px;
+  }
+}

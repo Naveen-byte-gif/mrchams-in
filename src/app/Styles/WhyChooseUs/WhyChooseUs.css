@@ -1,0 +1,79 @@
+/* styles/WhyChooseUs.css */
+
+.why-choose-us {
+  background-color: #f9f9f9;
+}
+
+.section-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.section-title .highlight {
+  color: #b71c1c; /* deep red */
+}
+
+.features-list {
+  list-style: none;
+}
+
+.features-list li {
+  display: flex;
+  align-items: start;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #444;
+}
+
+.features-list .check-icon {
+  color: #b71c1c;
+  margin-right: 10px;
+  margin-top: 5px;
+  font-size: 1.2rem;
+}
+
+/* Image Stack Styling */
+.image-stack {
+  position: relative;
+  max-width: 100%;
+}
+
+.image-stack .top-image {
+  border-radius: 8px;
+  /* width: 100%; */
+  height: auto;
+}
+
+.image-stack .overlay-image {
+  position: absolute;
+  bottom: 40px;
+  right: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  /* width: 60%; */
+  height: auto;
+  z-index: 2;
+}
+
+/* Responsive override */
+@media (max-width: 768px) {
+  .image-stack .overlay-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 1rem;
+    width: 100%;
+    display: none;
+  }
+}
+@media (max-width: 956px) {
+  .image-stack .overlay-image {
+    position: relative;
+    bottom: 0;
+    right: 0;
+    margin-top: 1rem;
+    width: 100%;
+    display: none;
+  }
+}
