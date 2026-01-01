@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import "../../styles/OurServices/OurServices.css";
+import "../../Styles/OurServices/OurServices.css";
 
 const services = [
   {
