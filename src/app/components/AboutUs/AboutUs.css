@@ -1,0 +1,402 @@
+/* About Us Section */
+.about-us-section {
+  padding: 60px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-section .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Remove Bootstrap row margins */
+.about-us-section .row {
+  margin: 0;
+}
+
+.about-us-section .row > * {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Image Wrapper - Overlapping Images */
+.about-images-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 10px;
+  min-height: 400px;
+}
+
+.about-image-back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 75%;
+  height: 85%;
+  z-index: 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.about-image-front {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 75%;
+  height: 85%;
+  z-index: 2;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.about-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.about-back-image {
+  transform: translateX(10px) translateY(-10px);
+}
+
+.about-front-image {
+  transform: translateX(-10px) translateY(10px);
+}
+
+/* Content Wrapper */
+.about-content-wrapper {
+  padding: 10px 0 10px 30px;
+}
+
+.about-heading {
+  font-size: 50px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 20px 0;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+.about-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #1a1a1a;
+  line-height: 1.7;
+  margin: 0;
+  max-width: 580px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Abstract Graphic Elements - Desktop Only */
+.about-graphics {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+  display: none; /* Hidden by default, shown on desktop */
+}
+
+@media (min-width: 992px) {
+  .about-graphics {
+    display: block;
+  }
+}
+
+.about-graphic {
+  position: absolute;
+}
+
+/* Top Left Green Curved Shape - More Subtle */
+.about-graphic-green-1 {
+  top: 8%;
+  left: 5%;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.15) 0%,
+    rgba(34, 197, 94, 0.08) 100%
+  );
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(-45deg);
+  opacity: 0.6;
+  backdrop-filter: blur(2px);
+}
+
+/* Top Right Blue Circles with Grid - More Professional */
+.about-graphic-blue-circles {
+  top: 10%;
+  right: 8%;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
+.blue-circle {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.blue-circle-1 {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.2) 0%,
+    rgba(59, 130, 246, 0.1) 100%
+  );
+  opacity: 0.7;
+  z-index: 2;
+  backdrop-filter: blur(3px);
+}
+
+.blue-circle-2 {
+  width: 40px;
+  height: 40px;
+  top: 35px;
+  left: 35px;
+  background: linear-gradient(
+    135deg,
+    rgba(59, 130, 246, 0.25) 0%,
+    rgba(59, 130, 246, 0.12) 100%
+  );
+  opacity: 0.6;
+  z-index: 3;
+  backdrop-filter: blur(2px);
+}
+
+.blue-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+      rgba(59, 130, 246, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+  background-size: 10px 10px;
+  opacity: 0.4;
+  z-index: 1;
+  transform: perspective(400px) rotateX(55deg);
+}
+
+/* Mid Top Right Green Shape - More Subtle */
+.about-graphic-green-2 {
+  top: 25%;
+  right: 12%;
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.12) 0%,
+    rgba(34, 197, 94, 0.06) 100%
+  );
+  border-radius: 50% 0 50% 50%;
+  transform: rotate(135deg);
+  opacity: 0.5;
+  backdrop-filter: blur(2px);
+}
+
+/* Bottom Left Green Circle with Star - More Subtle */
+.about-graphic-green-circle {
+  bottom: 8%;
+  left: 4%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-circle-dotted {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border: 2px dashed rgba(34, 197, 94, 0.25);
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.green-star {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.3) 0%,
+    rgba(34, 197, 94, 0.15) 100%
+  );
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+  opacity: 0.6;
+}
+
+/* Responsive Design */
+
+/* Large Desktops (1400px and up) */
+@media (min-width: 1400px) {
+  .about-heading {
+    font-size: 50px;
+  }
+
+  .about-description {
+    font-size: 20px;
+  }
+}
+
+/* Tablets (768px to 991px) - Hide graphics */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .about-graphics {
+    display: none !important;
+  }
+}
+
+/* Tablets and Small Desktops (768px to 1199px) */
+@media (max-width: 1199.98px) {
+  .about-us-section {
+    padding: 50px 0;
+  }
+
+  .about-content-wrapper {
+    padding: 10px 0 10px 20px;
+  }
+
+  .about-heading {
+    font-size: 56px;
+  }
+
+  .about-description {
+    font-size: 17px;
+  }
+
+  .about-images-wrapper {
+    min-height: 380px;
+    padding: 10px;
+  }
+}
+
+/* Mobile and Small Tablets (767px and below) */
+@media (max-width: 767.98px) {
+  .about-us-section {
+    padding: 40px 0;
+  }
+
+  .about-us-section .container {
+    padding: 0 15px;
+  }
+
+  .about-images-wrapper {
+    min-height: 320px;
+    padding: 5px;
+    margin-bottom: 30px;
+  }
+
+  .about-image-back {
+    width: 70%;
+    height: 75%;
+  }
+
+  .about-image-front {
+    width: 70%;
+    height: 75%;
+  }
+
+  .about-content-wrapper {
+    padding: 0;
+    text-align: left;
+  }
+
+  .about-heading {
+    font-size: 42px;
+    margin-bottom: 16px;
+    line-height: 1.2;
+  }
+
+  .about-description {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  /* Hide all graphics on mobile */
+  .about-graphics {
+    display: none !important;
+  }
+}
+
+/* Extra Small Mobile (480px and below) */
+@media (max-width: 480px) {
+  .about-us-section {
+    padding: 30px 0;
+  }
+
+  .about-heading {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .about-description {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .about-images-wrapper {
+    min-height: 280px;
+    margin-bottom: 20px;
+  }
+
+  .about-image-back,
+  .about-image-front {
+    width: 65%;
+    height: 70%;
+  }
+
+  /* Ensure all graphics are hidden on mobile */
+  .about-graphics {
+    display: none !important;
+  }
+}
+
+/* Smooth Transitions */
+.about-image-back,
+.about-image-front {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-images-wrapper:hover .about-image-back {
+  transform: translateX(15px) translateY(-15px) scale(1.02);
+}
+
+.about-images-wrapper:hover .about-image-front {
+  transform: translateX(-15px) translateY(15px) scale(1.02);
+}

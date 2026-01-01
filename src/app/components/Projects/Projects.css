@@ -1,0 +1,493 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+/* Projects Section - Dark Theme */
+.projects-section {
+  background-color: #1a1a1a;
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Subtle Geometric Pattern Background */
+.projects-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.02) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.projects-section .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header Section */
+.projects-header {
+  margin-bottom: 80px;
+  text-align: left;
+}
+
+.projects-label {
+  font-size: 13px;
+  font-weight: 400;
+  color: #999999;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-family: "Inter", sans-serif;
+  display: block;
+}
+
+.projects-title {
+  font-size: 64px;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.15;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -1px;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.projects-row {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 24px;
+}
+
+.project-col {
+  position: relative;
+}
+
+.project-col-6 {
+  grid-column: span 6;
+}
+
+.project-col-4 {
+  grid-column: span 4;
+}
+
+/* Project Card */
+.project-card {
+  background-color: transparent;
+  border-radius: 0;
+  overflow: visible;
+  transition: transform 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  padding: 0;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Project Content - Text on Top */
+.project-content {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* Project Image Wrapper - Image on Bottom */
+.project-image-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.03);
+}
+
+.project-image-placeholder {
+  width: 100%;
+  height: 354px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+}
+
+.project-image-placeholder i {
+  font-size: 80px;
+  color: #444444;
+  opacity: 0.5;
+}
+
+.project-category {
+  font-size: 11px;
+  font-weight: 600;
+  color: #facc15;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0;
+  font-family: "Inter", sans-serif;
+  line-height: 1.4;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+  line-height: 1.35;
+  font-family: "Inter", sans-serif;
+  letter-spacing: -0.3px;
+}
+
+.project-subtitle {
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  margin: 0;
+  line-height: 1.5;
+  font-family: "Inter", sans-serif;
+}
+
+/* CTA Card */
+.project-cta-card {
+  background-color: #facc15;
+  border-radius: 8px;
+  height: 100%;
+  min-height: 354px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.project-cta-card:hover {
+  background-color: #f4c000;
+  transform: translateY(-4px);
+}
+
+.project-cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 24px;
+}
+
+.project-cta-text {
+  font-size: 17px;
+  font-weight: 500;
+  color: #000000;
+  font-family: "Inter", sans-serif;
+  letter-spacing: 0.2px;
+}
+
+.project-cta-icon {
+  width: 30px;
+  height: 30px;
+  background-color: #000000;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.project-cta-icon i {
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+/* Large Desktop (1400px and above) */
+@media (min-width: 1400px) {
+  .projects-section .container {
+    max-width: 1320px;
+  }
+
+  .projects-title {
+    font-size: 72px;
+  }
+}
+
+/* Desktop (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .projects-title {
+    font-size: 64px;
+  }
+}
+
+/* Tablet Landscape (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .projects-section {
+    padding: 90px 0;
+  }
+
+  .projects-header {
+    margin-bottom: 60px;
+  }
+
+  .projects-title {
+    font-size: 56px;
+  }
+
+  .project-cta-card {
+    min-height: 320px;
+  }
+
+  .project-title {
+    font-size: 22px;
+  }
+}
+
+/* Tablet Portrait (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .projects-section {
+    padding: 70px 0;
+  }
+
+  .projects-section .container {
+    padding: 0 24px;
+  }
+
+  .projects-header {
+    margin-bottom: 50px;
+  }
+
+  .projects-title {
+    font-size: 48px;
+  }
+
+  .projects-grid {
+    gap: 32px;
+  }
+
+  .projects-row {
+    gap: 24px;
+  }
+
+  .project-col-6 {
+    grid-column: span 6;
+  }
+
+  .project-col-4 {
+    grid-column: span 4;
+  }
+
+  .project-cta-card {
+    min-height: 300px;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-cta-text {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Landscape and Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .projects-section {
+    padding: 60px 0;
+  }
+
+  .projects-section .container {
+    padding: 0 20px;
+  }
+
+  .projects-header {
+    margin-bottom: 40px;
+  }
+
+  .projects-title {
+    font-size: 42px;
+  }
+
+  .projects-grid {
+    gap: 32px;
+  }
+
+  .projects-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-col-6,
+  .project-col-4 {
+    grid-column: span 1;
+  }
+
+  .project-cta-card {
+    min-height: 280px;
+  }
+
+  .project-title {
+    font-size: 20px;
+  }
+
+  .project-cta-content {
+    flex-direction: row;
+    gap: 12px;
+  }
+
+  .project-cta-text {
+    font-size: 16px;
+  }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+  .projects-section {
+    padding: 50px 0;
+  }
+
+  .projects-section .container {
+    padding: 0 16px;
+  }
+
+  .projects-header {
+    margin-bottom: 40px;
+  }
+
+  .projects-label {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .projects-title {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .projects-grid {
+    gap: 32px;
+  }
+
+  .projects-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .project-col-6,
+  .project-col-4 {
+    grid-column: span 1;
+  }
+
+  .project-cta-card {
+    min-height: 260px;
+  }
+
+  .project-content {
+    gap: 6px;
+    margin-bottom: 20px;
+  }
+
+  .project-category {
+    font-size: 11px;
+    letter-spacing: 0.6px;
+  }
+
+  .project-title {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .project-subtitle {
+    font-size: 13px;
+  }
+
+  .project-cta-content {
+    flex-direction: row;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .project-cta-text {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .project-cta-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .project-cta-icon i {
+    font-size: 14px;
+  }
+}
+
+/* Extra Small Mobile (up to 400px) */
+@media (max-width: 400px) {
+  .projects-section {
+    padding: 40px 0;
+  }
+
+  .projects-title {
+    font-size: 28px;
+  }
+
+  .project-cta-card {
+    min-height: 240px;
+  }
+
+  .project-title {
+    font-size: 16px;
+  }
+
+  .project-cta-text {
+    font-size: 14px;
+  }
+
+  .project-cta-content {
+    padding: 16px;
+  }
+}

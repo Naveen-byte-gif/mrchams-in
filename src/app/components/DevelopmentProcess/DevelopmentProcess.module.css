@@ -1,0 +1,751 @@
+/* Development Process Section */
+.developmentProcessSection {
+  padding: 60px 0;
+  background-color: #ffffff;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+  min-height: 600px;
+}
+
+/* Background Curves */
+.backgroundCurves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.curveTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+}
+
+.curveBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Title Section */
+.titleSection {
+  text-align: center;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.titleDivider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #8B5CF6 0%, #A78BFA 100%);
+  margin: 0 auto 20px;
+  border-radius: 2px;
+}
+
+.mainTitle {
+  font-size: 48px;
+  font-weight: 700;
+  color: #303030;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+/* Timeline Container */
+.timelineContainer {
+  position: relative;
+  width: 100%;
+  padding: 40px 0 40px 0;
+  z-index: 2;
+  min-height: 450px;
+}
+
+.timelineWrapper {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 4px;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+}
+
+.timelineLine {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(100% - 50px);
+  height: 4px;
+  background: linear-gradient(90deg, #EC4899 0%, #F472B6 100%);
+  border-radius: 2px;
+  z-index: 1;
+}
+
+.trophyIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  font-size: 28px;
+  z-index: 3;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  background: #ffffff;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+/* Steps Container */
+.stepsContainer {
+  position: relative;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  align-items: start;
+  padding: 0;
+  min-height: 450px;
+  z-index: 2;
+  gap: 0;
+  column-gap: 0;
+}
+
+/* Step Wrapper */
+.stepWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 450px;
+}
+
+.stepTop {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.stepBottom {
+  align-items: center;
+  justify-content: flex-start;
+  align-self: flex-end;
+}
+
+/* Connection Line */
+.connectionLine {
+  position: absolute;
+  width: 2px;
+  background: linear-gradient(180deg, #EC4899 0%, #F472B6 100%);
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.connectionLineTop {
+  bottom: 50%;
+  height: 80px;
+  transform: translateX(-50%);
+  transform-origin: bottom;
+}
+
+.connectionLineBottom {
+  top: 50%;
+  height: 80px;
+  transform: translateX(-50%);
+  transform-origin: top;
+}
+
+/* Step Box */
+.stepBox {
+  position: absolute;
+  background: #ffffff;
+  border: 2px solid #F3F4F6;
+  border-radius: 12px;
+  padding: 20px 18px;
+  width: calc(100% - 10px);
+  max-width: 220px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  z-index: 2;
+  pointer-events: none;
+  box-sizing: border-box;
+}
+
+.stepTop .stepBox {
+  bottom: calc(50% + 90px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.stepBottom .stepBox {
+  top: calc(50% + 90px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Step Number */
+.stepNumber {
+  font-size: 32px;
+  font-weight: 700;
+  color: #EC4899;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+/* Step Title */
+.stepTitle {
+  font-size: 18px;
+  font-weight: 600;
+  color: #303030;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+
+/* Step Description */
+.stepDescription {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555555;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Responsive Design */
+
+/* Large Desktops (1400px and up) */
+@media (min-width: 1400px) {
+  .developmentProcessSection {
+    padding: 80px 0 120px 0;
+  }
+
+  .container {
+    max-width: 1600px;
+    padding: 0 60px;
+  }
+
+  .mainTitle {
+    font-size: 56px;
+  }
+
+  .timelineContainer {
+    padding: 50px 0 70px 0;
+  }
+
+  .stepBox {
+    max-width: 260px;
+    padding: 28px 24px;
+  }
+
+  .stepTitle {
+    font-size: 20px;
+  }
+
+  .stepDescription {
+    font-size: 15px;
+  }
+}
+
+/* Desktops (1200px - 1399px) */
+@media (min-width: 1200px) and (max-width: 1399.98px) {
+  .developmentProcessSection {
+    padding: 60px 0 100px 0;
+  }
+
+  .container {
+    padding: 0 30px;
+  }
+
+  .mainTitle {
+    font-size: 48px;
+  }
+
+  .timelineContainer {
+    padding: 40px 0 60px 0;
+  }
+
+  .stepBox {
+    max-width: 200px;
+    padding: 20px 18px;
+  }
+
+  .stepTitle {
+    font-size: 17px;
+  }
+
+  .stepDescription {
+    font-size: 13px;
+  }
+}
+
+/* Laptops (992px - 1199px) */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .developmentProcessSection {
+    padding: 50px 0 80px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+    max-width: 100%;
+  }
+
+  .titleSection {
+    margin-bottom: 40px;
+  }
+
+  .mainTitle {
+    font-size: 38px;
+  }
+
+  .timelineContainer {
+    padding: 30px 0 50px 0;
+    min-height: 400px;
+  }
+
+  .timelineWrapper {
+    left: 0;
+    right: 0;
+  }
+
+  .timelineLine {
+    width: calc(100% - 35px);
+  }
+
+  .stepsContainer {
+    min-height: 400px;
+    gap: 0;
+    padding: 0 5px;
+  }
+
+  .stepWrapper {
+    min-height: 400px;
+    padding: 0 2px;
+  }
+
+  .stepBox {
+    max-width: 170px;
+    padding: 16px 14px;
+    width: calc(100% - 8px);
+  }
+
+  .stepNumber {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.2;
+  }
+
+  .stepDescription {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .connectionLineTop,
+  .connectionLineBottom {
+    height: 70px;
+  }
+
+  .stepTop .stepBox {
+    bottom: calc(50% + 80px);
+  }
+
+  .stepBottom .stepBox {
+    top: calc(50% + 80px);
+  }
+
+  .trophyIcon {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* Tablets (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .developmentProcessSection {
+    padding: 50px 0;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .titleSection {
+    margin-bottom: 35px;
+  }
+
+  .titleDivider {
+    width: 50px;
+    height: 2.5px;
+  }
+
+  .mainTitle {
+    font-size: 36px;
+  }
+
+  .timelineContainer {
+    padding: 30px 0 50px 0;
+    min-height: 600px;
+  }
+
+  .stepsContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    min-height: 600px;
+    gap: 30px 15px;
+  }
+
+  .stepWrapper {
+    min-height: auto;
+  }
+
+  .stepTop .stepBox {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .stepBottom .stepBox {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .connectionLine {
+    display: none;
+  }
+
+  .stepBox {
+    padding: 22px 18px;
+  }
+
+  .timelineWrapper {
+    display: none;
+  }
+}
+
+/* Mobile Landscape and Small Tablets (576px - 767px) */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .developmentProcessSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 25px;
+  }
+
+  .titleSection {
+    margin-bottom: 30px;
+  }
+
+  .titleDivider {
+    width: 45px;
+    height: 2px;
+    margin-bottom: 16px;
+  }
+
+  .mainTitle {
+    font-size: 32px;
+  }
+
+  .timelineContainer {
+    padding: 30px 0 40px 0;
+    min-height: auto;
+  }
+
+  .timelineLine {
+    height: 3px;
+  }
+
+  .trophyIcon {
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .stepsContainer {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .stepWrapper {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 30px;
+    position: relative;
+    min-height: auto;
+  }
+
+  .stepTop,
+  .stepBottom {
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+  }
+
+  .stepTop .stepBox,
+  .stepBottom .stepBox {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0;
+  }
+
+  .stepTop .stepBox,
+  .stepBottom .stepBox {
+    transform: none;
+  }
+
+  .connectionLine {
+    display: none;
+  }
+
+  .stepBox {
+    max-width: 100%;
+    width: 100%;
+    padding: 20px 18px;
+  }
+
+  .stepNumber {
+    font-size: 28px;
+  }
+
+  .stepTitle {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .stepDescription {
+    font-size: 13px;
+  }
+
+  .timelineWrapper {
+    display: none;
+  }
+}
+
+/* Mobile Devices (up to 575px) */
+@media (max-width: 575.98px) {
+  .developmentProcessSection {
+    padding: 40px 0;
+    min-height: auto;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .titleSection {
+    margin-bottom: 30px;
+  }
+
+  .titleDivider {
+    width: 40px;
+    height: 2px;
+    margin-bottom: 14px;
+  }
+
+  .mainTitle {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .timelineContainer {
+    padding: 20px 0 30px 0;
+    min-height: auto;
+  }
+
+  .timelineWrapper {
+    display: none;
+  }
+
+  .stepsContainer {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+    min-height: auto;
+  }
+
+  .stepWrapper {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    margin-bottom: 25px;
+    position: relative;
+    min-height: auto;
+  }
+
+  .stepTop,
+  .stepBottom {
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    align-self: center;
+  }
+
+  .stepTop .stepBox,
+  .stepBottom .stepBox {
+    position: relative;
+    bottom: auto;
+    top: auto;
+    left: auto;
+    transform: none;
+    margin: 0;
+  }
+
+  .stepTop .stepBox,
+  .stepBottom .stepBox {
+    transform: none;
+  }
+
+  .connectionLine {
+    display: none;
+  }
+
+  .stepBox {
+    max-width: 100%;
+    width: 100%;
+    padding: 18px 16px;
+    border-radius: 10px;
+  }
+
+  .stepNumber {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+
+  .stepTitle {
+    font-size: 15px;
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .stepDescription {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .trophyIcon {
+    display: none;
+  }
+}
+
+/* Extra Small Mobile Devices (up to 375px) */
+@media (max-width: 375px) {
+  .developmentProcessSection {
+    padding: 40px 0;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .titleSection {
+    margin-bottom: 30px;
+  }
+
+  .titleDivider {
+    width: 35px;
+    height: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .mainTitle {
+    font-size: 22px;
+  }
+
+  .timelineContainer {
+    padding: 25px 0 40px 0;
+  }
+
+  .stepBox {
+    padding: 16px 14px;
+  }
+
+  .stepNumber {
+    font-size: 22px;
+  }
+
+  .stepTitle {
+    font-size: 14px;
+  }
+
+  .stepDescription {
+    font-size: 11px;
+  }
+}
+
+/* Animation Enhancements */
+.stepBox {
+  will-change: transform, box-shadow;
+}
+
+.timelineLine {
+  will-change: transform;
+}
+
+/* Accessibility */
+.stepBox:focus {
+  outline: 2px solid #EC4899;
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .developmentProcessSection {
+    padding: 40px 0;
+  }
+
+  .stepBox {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #ddd;
+  }
+}

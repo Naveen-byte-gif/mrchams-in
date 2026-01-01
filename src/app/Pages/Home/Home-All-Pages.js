@@ -5,21 +5,31 @@ import OurServices from "@/app/components/OurServices/OurServices";
 import WhyChooseUs from "@/app/components/WhyChooseUs/WhyChooseUs";
 import Portfolio from "@/app/components/Portfolio/Portfolio";
 import Contact from "@/app/components/Contact/Contact";
-import SparklesCore from "@/app/components/Hero-Section/SparklesCore";
-// import ZaanvarLanding from "./ZaanvarLanding/ZaanvarLanding";
+import Projects from "@/app/components/Projects/Projects";
+import WayOfBuilding from "@/app/components/WayOfBuilding/WayOfBuilding";
+import DesignApproach from "@/app/components/DesignApproach/DesignApproach";
+import DevelopmentProcess from "@/app/components/DevelopmentProcess/DevelopmentProcess";
+import HireBanner from "@/app/components/HireBanner/HireBanner";
+import Footer from "@/app/components/Footer/Footer";
+import AboutUs from "@/app/components/AboutUs/AboutUs";
 
 const HomeAllPages = () => {
   return (
     <>
       <div className="">
         <Navbar />
-        {/* <Hero /> */}
-        {/* <ZaanvarLanding /> */}
         <HeroSection />
-        <WhyChooseUs />
-        <OurServices />
-        <Portfolio />
-        <Contact />
+        <AboutUs />
+        <WayOfBuilding />
+        <DevelopmentProcess />
+        <DesignApproach />
+        {/* <WhyChooseUs /> */}
+        {/* <OurServices /> */}
+        <Projects />
+        {/* <Portfolio /> */}
+        {/* <Contact /> */}
+        <HireBanner />
+        <Footer />
       </div>
     </>
   );
