@@ -1,0 +1,382 @@
+/* Hire Banner Section */
+.hire-banner-section {
+  padding: 70px 15px;
+  background-color: #ffffff;
+  overflow: visible;
+}
+
+.hire-banner-card {
+  background-color: #e8ebef;
+  border-radius: 16px;
+  padding: 40px 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: visible;
+}
+
+/* Text Content */
+.hire-banner-text {
+  padding: 10px 0;
+}
+
+.hire-banner-heading {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333333;
+  line-height: 1.3;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: -0.5px;
+}
+
+/* Button Wrapper */
+.hire-banner-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 25px 0;
+  min-height: 100px;
+}
+
+/* Sparkle Groups */
+.sparkle-group {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 20px;
+}
+
+.sparkle-top {
+  top: -8px;
+}
+
+.sparkle-bottom {
+  bottom: -8px;
+}
+
+/* Sparkle Lines - Thin rectangular lines with vertical gradient */
+.sparkle-line {
+  width: 2.5px;
+  height: 16px;
+  background: linear-gradient(180deg, #ff6b35 0%, #ffa726 50%, #ffd23f 100%);
+  border-radius: 1px;
+  position: absolute;
+  opacity: 0.9;
+  transform-origin: center bottom;
+  left: 50%;
+}
+
+.sparkle-bottom .sparkle-line {
+  transform-origin: center top;
+}
+
+/* Top sparkles - radiating upwards and outwards in starburst pattern */
+.sparkle-top .sparkle-1 {
+  transform: translateX(calc(-50% - 22px)) rotate(-50deg);
+}
+
+.sparkle-top .sparkle-2 {
+  transform: translateX(calc(-50% - 8px)) rotate(-18deg);
+}
+
+.sparkle-top .sparkle-3 {
+  transform: translateX(calc(-50% + 8px)) rotate(18deg);
+}
+
+.sparkle-top .sparkle-4 {
+  transform: translateX(calc(-50% + 22px)) rotate(50deg);
+}
+
+/* Bottom sparkles - radiating downwards and outwards (mirrored starburst) */
+.sparkle-bottom .sparkle-1 {
+  transform: translateX(calc(-50% - 22px)) rotate(50deg);
+}
+
+.sparkle-bottom .sparkle-2 {
+  transform: translateX(calc(-50% - 8px)) rotate(18deg);
+}
+
+.sparkle-bottom .sparkle-3 {
+  transform: translateX(calc(-50% + 8px)) rotate(-18deg);
+}
+
+.sparkle-bottom .sparkle-4 {
+  transform: translateX(calc(-50% + 22px)) rotate(-50deg);
+}
+
+/* Button */
+.hire-banner-btn {
+  background: linear-gradient(
+    90deg,
+    #ff6b35 0%,
+    #ff8c42 25%,
+    #ffa726 50%,
+    #ffb74d 75%,
+    #ffd23f 100%
+  );
+  color: #ffffff !important;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 107, 53, 0.25);
+  letter-spacing: 0.3px;
+}
+
+.hire-banner-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  color: #ffffff !important;
+}
+
+.hire-banner-btn:active {
+  transform: translateY(0);
+  color: #ffffff !important;
+}
+
+.hire-banner-btn:focus {
+  color: #ffffff !important;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 992px) {
+  .hire-banner-card {
+    padding: 35px 40px;
+  }
+
+  .hire-banner-heading {
+    font-size: 28px;
+  }
+
+  .hire-banner-btn {
+    font-size: 15px;
+    padding: 12px 28px;
+  }
+
+  .hire-banner-button-wrapper {
+    margin-top: 20px;
+  }
+}
+
+/* Responsive Design - Mobile Landscape */
+@media (max-width: 768px) {
+  .hire-banner-section {
+    padding: 50px 15px;
+  }
+
+  .hire-banner-card {
+    padding: 30px 25px;
+    border-radius: 12px;
+  }
+
+  .hire-banner-heading {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .hire-banner-text {
+    text-align: center;
+    padding: 0;
+  }
+
+  .hire-banner-button-wrapper {
+    margin-top: 0;
+    padding: 15px 0;
+  }
+
+  .hire-banner-btn {
+    font-size: 14px;
+    padding: 12px 24px;
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .sparkle-line {
+    height: 14px;
+    width: 2px;
+  }
+
+  .sparkle-group {
+    gap: 6px;
+    width: 80px;
+  }
+
+  .sparkle-top .sparkle-1 {
+    transform: translateX(calc(-50% - 16px)) rotate(-50deg);
+  }
+
+  .sparkle-top .sparkle-4 {
+    transform: translateX(calc(-50% + 16px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-1 {
+    transform: translateX(calc(-50% - 16px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-4 {
+    transform: translateX(calc(-50% + 16px)) rotate(-50deg);
+  }
+}
+
+/* Responsive Design - Mobile Portrait */
+@media (max-width: 576px) {
+  .hire-banner-section {
+    padding: 40px 15px;
+  }
+
+  .hire-banner-card {
+    padding: 25px 20px;
+    border-radius: 10px;
+  }
+
+  .hire-banner-heading {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .hire-banner-btn {
+    font-size: 14px;
+    padding: 11px 22px;
+    max-width: 260px;
+  }
+
+  .sparkle-line {
+    height: 12px;
+    width: 2px;
+  }
+
+  .sparkle-group {
+    gap: 4px;
+    width: 70px;
+  }
+
+  .sparkle-top .sparkle-1 {
+    transform: translateX(calc(-50% - 14px)) rotate(-50deg);
+  }
+
+  .sparkle-top .sparkle-4 {
+    transform: translateX(calc(-50% + 14px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-1 {
+    transform: translateX(calc(-50% - 14px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-4 {
+    transform: translateX(calc(-50% + 14px)) rotate(-50deg);
+  }
+
+  .hire-banner-button-wrapper {
+    padding: 12px 0;
+  }
+}
+
+/* Responsive Design - Extra Small Mobile */
+@media (max-width: 400px) {
+  .hire-banner-heading {
+    font-size: 18px;
+  }
+
+  .hire-banner-btn {
+    font-size: 13px;
+    padding: 10px 20px;
+    max-width: 240px;
+  }
+
+  .sparkle-line {
+    height: 10px;
+    width: 1.5px;
+  }
+
+  .sparkle-group {
+    width: 60px;
+  }
+
+  .sparkle-top .sparkle-1 {
+    transform: translateX(calc(-50% - 12px)) rotate(-50deg);
+  }
+
+  .sparkle-top .sparkle-4 {
+    transform: translateX(calc(-50% + 12px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-1 {
+    transform: translateX(calc(-50% - 12px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-4 {
+    transform: translateX(calc(-50% + 12px)) rotate(-50deg);
+  }
+}
+
+/* Responsive Design - Large Desktop */
+@media (min-width: 1400px) {
+  .hire-banner-card {
+    padding: 45px 60px;
+  }
+
+  .hire-banner-heading {
+    font-size: 36px;
+  }
+
+  .hire-banner-btn {
+    font-size: 17px;
+    padding: 16px 36px;
+  }
+
+  .sparkle-line {
+    height: 18px;
+    width: 3px;
+  }
+
+  .sparkle-group {
+    width: 120px;
+  }
+
+  .sparkle-top .sparkle-1 {
+    transform: translateX(calc(-50% - 28px)) rotate(-50deg);
+  }
+
+  .sparkle-top .sparkle-4 {
+    transform: translateX(calc(-50% + 28px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-1 {
+    transform: translateX(calc(-50% - 28px)) rotate(50deg);
+  }
+
+  .sparkle-bottom .sparkle-4 {
+    transform: translateX(calc(-50% + 28px)) rotate(-50deg);
+  }
+}
+
+/* Extra Large Desktop */
+@media (min-width: 1600px) {
+  .hire-banner-card {
+    padding: 50px 70px;
+  }
+
+  .hire-banner-heading {
+    font-size: 40px;
+  }
+
+  .hire-banner-btn {
+    font-size: 18px;
+    padding: 18px 40px;
+  }
+}
