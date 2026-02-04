@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "fullName": "TK Devendra Kumar",
+    "designation": "Manager",
+    "avatar": ""
+  },
+  {
+    "id": 2,
+    "fullName": "Siri Soma",
+    "designation": "QA Engineer Lead",
+    "avatar": ""
+  },
+  {
+    "id": 3,
+    "fullName": "Bharathi Saravakota",
+    "designation": "Full Stack Developer",
+    "avatar": ""
+  },
+  {
+    "id": 4,
+    "fullName": "Girish Kumar",
+    "designation": "UI/UX Designer",
+    "avatar": ""
+  },
+  {
+    "id": 5,
+    "fullName": "Naveen Tungana",
+    "designation": "Full Stack Developer",
+    "avatar": ""
+  },
+  {
+    "id": 6,
+    "fullName": "Sanjay Maraboina",
+    "designation": "Frontend Developer",
+    "avatar": ""
+  },
+  {
+    "id": 7,
+    "fullName": "Shaik Jainoddin",
+    "designation": "Frontend Developer",
+    "avatar": ""
+  },
+  {
+    "id": 17,
+    "fullName": "Uppala Yashwanth",
+    "designation": "Backend Developer",
+    "avatar": ""
+  },
+  {
+    "id": 8,
+    "fullName": "Deepthi Polisetty",
+    "designation": "Mobile Developer",
+    "avatar": ""
+  },
+  {
+    "id": 9,
+    "fullName": "Gorrela Mounica",
+    "designation": "QA Engineer",
+    "avatar": ""
+  },
+  {
+    "id": 10,
+    "fullName": "Phani",
+    "designation": "UI/UX Designer",
+    "avatar": ""
+  }
+]

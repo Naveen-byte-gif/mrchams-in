@@ -3,24 +3,39 @@
 // components/Navbar.js
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import "../../Styles/NavBar/Navbar.css";
 
 const Navbar = () => {
+  const pathname = usePathname();
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const toggleRef = useRef(null);
 
-  // Navigation items based on HomeAllPages sections
+  // Navigation items based on HomeAllPages sections (href starting with / = separate page)
   const navItems = [
     { name: "Home", href: "#home", section: "home" },
-    { name: "About Us", href: "#about", section: "about" },
-    { name: "Way of Building", href: "#way-of-building", section: "way-of-building" },
-    { name: "Development Process", href: "#development-process", section: "development-process" },
-    { name: "Design Approach", href: "#design-approach", section: "design-approach" },
+
+    {
+      name: "Way of Building",
+      href: "#way-of-building",
+      section: "way-of-building",
+    },
+    {
+      name: "Design Approach",
+      href: "#design-approach",
+      section: "design-approach",
+    },
+    {
+      name: "Development Process",
+      href: "#development-process",
+      section: "development-process",
+    },
     { name: "Projects", href: "#projects", section: "projects" },
+    { name: "About Us", href: "/about", section: "about" },
     { name: "Hire", href: "#hire", section: "hire" },
   ];
 
@@ -28,7 +43,7 @@ const Navbar = () => {
   const handleNavClick = (e, href) => {
     e.preventDefault();
     closeMobileMenu();
-    
+
     // Small delay to allow menu to close smoothly
     setTimeout(() => {
       if (href === "#home") {
@@ -54,7 +69,7 @@ const Navbar = () => {
   const handleMobileMenuToggle = () => {
     const newState = !isMobileMenuOpen;
     setIsMobileMenuOpen(newState);
-    
+
     if (newState) {
       document.body.classList.add("menu-open");
     } else {
@@ -68,17 +83,50 @@ const Navbar = () => {
     document.body.classList.remove("menu-open");
   };
 
+  // Sync active section when on separate pages
+  useEffect(() => {
+    if (pathname === "/about") {
+      setActiveSection("about");
+      return;
+    }
+
+    // Avoid highlighting "Home" on non-home pages
+    if (pathname !== "/") {
+      setActiveSection("");
+    }
+  }, [pathname]);
+
+  // When landing on home with a hash (e.g. from Founder page click), scroll to that section
+  useEffect(() => {
+    if (pathname !== "/") return;
+    const hash = typeof window !== "undefined" ? window.location.hash : "";
+    if (!hash) return;
+    const timer = setTimeout(() => {
+      const el = document.querySelector(hash);
+      if (el) {
+        const offset = 110;
+        const top = el.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [pathname]);
+
   // Detect active section on scroll
   useEffect(() => {
+    // Only track scroll sections on the home page
+    if (pathname !== "/") return;
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
 
-      // Get all sections
-      const sections = navItems.map((item) => {
-        const element = document.querySelector(item.href);
-        return { id: item.section, element, href: item.href };
-      });
+      // Get all sections (only hash links are valid selectors; skip page links like /founder)
+      const sections = navItems
+        .filter((item) => item.href.startsWith("#"))
+        .map((item) => {
+          const element = document.querySelector(item.href);
+          return { id: item.section, element, href: item.href };
+        });
 
       // Check if we're at the top (home section) - within first 300px
       if (scrollPosition < 300) {
@@ -93,7 +141,7 @@ const Navbar = () => {
         const section = sections[i];
         if (section.element) {
           const rect = section.element.getBoundingClientRect();
-          
+
           // Check if section is in viewport
           if (rect.top <= viewportOffset && rect.bottom >= viewportOffset) {
             setActiveSection(section.id);
@@ -116,7 +164,7 @@ const Navbar = () => {
     handleScroll(); // Initial check
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   // Handle window resize to close mobile menu on larger screens
   useEffect(() => {
@@ -174,22 +222,24 @@ const Navbar = () => {
   return (
     <nav className={`modern-navbar ${isScrolled ? "scrolled" : ""}`}>
       <div className="navbar-container">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="navbar-brand"
           onClick={(e) => {
             e.preventDefault();
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
         >
-          <Image
-            src="/mrChams-Logo.svg"
-            alt="MrChams Logo"
-            width={120}
-            height={50}
-            className="navbar-logo"
-            priority
-          />
+          <span className="navbar-brand-glass">
+            <Image
+              src="/mrChams-Logo.svg"
+              alt="MrChams Logo"
+              width={120}
+              height={50}
+              className="navbar-logo"
+              priority
+            />
+          </span>
         </Link>
 
         {/* Mobile Menu Toggle */}
@@ -205,34 +255,69 @@ const Navbar = () => {
         </button>
 
         {/* Navigation Menu */}
-        <div 
+        <div
           ref={menuRef}
           className={`navbar-menu ${isMobileMenuOpen ? "active" : ""}`}
         >
           <ul className="navbar-nav">
-            {navItems.map((item) => (
-              <li key={item.section} className="nav-item">
-                <a
-                  href={item.href}
-                  className={`nav-link ${
-                    activeSection === item.section ? "active" : ""
-                  }`}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                >
-                  <span className="nav-link-text">{item.name}</span>
-                </a>
-              </li>
-            ))}
+            {navItems.map((item) => {
+              const isPageLink = item.href.startsWith("/");
+              const isHashLink = item.href.startsWith("#");
+              const isActive = activeSection === item.section;
+              const className = `nav-link ${isActive ? "active" : ""}`;
+              const homeHref = isHashLink ? `/${item.href}` : item.href;
+              return (
+                <li key={item.section} className="nav-item">
+                  {isPageLink ? (
+                    <Link
+                      href={item.href}
+                      className={className}
+                      onClick={closeMobileMenu}
+                    >
+                      <span className="nav-link-text">{item.name}</span>
+                    </Link>
+                  ) : isHashLink ? (
+                    pathname === "/" ? (
+                      <a
+                        href={item.href}
+                        className={className}
+                        onClick={(e) => handleNavClick(e, item.href)}
+                      >
+                        <span className="nav-link-text">{item.name}</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={homeHref}
+                        className={className}
+                        onClick={closeMobileMenu}
+                      >
+                        <span className="nav-link-text">{item.name}</span>
+                      </Link>
+                    )
+                  ) : null}
+                </li>
+              );
+            })}
           </ul>
-          
+
           {/* Contact Us Button */}
-          <a
-            href="#footer"
-            className="navbar-contact-btn"
-            onClick={(e) => handleNavClick(e, "#footer")}
-          >
-            Contact us
-          </a>
+          {pathname === "/" ? (
+            <a
+              href="#footer"
+              className="navbar-contact-btn"
+              onClick={(e) => handleNavClick(e, "#footer")}
+            >
+              Contact us
+            </a>
+          ) : (
+            <Link
+              href="/#footer"
+              className="navbar-contact-btn"
+              onClick={closeMobileMenu}
+            >
+              Contact us
+            </Link>
+          )}
         </div>
       </div>
     </nav>

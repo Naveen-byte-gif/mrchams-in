@@ -1,0 +1,284 @@
+/* Layout */
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(160deg, #fafafa 0%, #f5f5f5 50%, #ffffff 100%);
+}
+
+.main {
+  flex: 1;
+  padding: 120px 0 80px;
+}
+
+.row {
+  gap: 2rem 0;
+}
+
+.contentCol {
+  display: flex;
+  align-items: center;
+}
+
+.imageCol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Right side image */
+.imageWrap {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08), 0 8px 20px rgba(255, 152, 0, 0.08);
+  animation: imageReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.founderImg {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+@keyframes imageReveal {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Card & text animations */
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  padding: 3rem 2.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
+  overflow: hidden;
+  animation: cardReveal 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #FFB74D 0%, #FF9800 100%);
+  border-radius: 4px 0 0 4px;
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #FF9800;
+  margin: 0 0 0.5rem 0;
+  animation: textFadeIn 0.5s ease 0.15s both;
+}
+
+.name {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 0.35rem 0;
+  animation: textFadeIn 0.5s ease 0.25s both;
+}
+
+.role {
+  font-size: 1.1rem;
+  color: #555;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  animation: textFadeIn 0.5s ease 0.35s both;
+}
+
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.company {
+  color: #FF9800;
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(90deg, rgba(255, 152, 0, 0.35) 0%, rgba(255, 152, 0, 0.08) 100%);
+  margin: 0 0 1.75rem 0;
+  animation: dividerReveal 0.5s ease 0.45s both;
+}
+
+@keyframes dividerReveal {
+  from {
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  to {
+    opacity: 1;
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.bio {
+  color: #333;
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
+
+.bio p {
+  margin: 0 0 1.25rem 0;
+  animation: bioFadeIn 0.5s ease both;
+}
+
+.bio p:nth-child(1) { animation-delay: 0.55s; }
+.bio p:nth-child(2) { animation-delay: 0.65s; }
+.bio p:nth-child(3) { animation-delay: 0.75s; }
+
+.bio p:last-child {
+  margin-bottom: 0;
+}
+
+@keyframes bioFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive: 992px */
+@media (max-width: 992px) {
+  .main {
+    padding: 110px 0 60px;
+  }
+
+  .row {
+    gap: 2.5rem 0;
+  }
+
+  .imageWrap {
+    max-width: 400px;
+  }
+
+  .card {
+    padding: 2.25rem 2rem;
+  }
+
+  .name {
+    font-size: 1.9rem;
+  }
+}
+
+/* Responsive: 768px */
+@media (max-width: 768px) {
+  .main {
+    padding: 100px 0 48px;
+  }
+
+  .contentCol {
+    align-items: flex-start;
+  }
+
+  .imageCol {
+    order: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .imageWrap {
+    max-width: 320px;
+    border-radius: 16px;
+  }
+
+  .card {
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .card::before {
+    width: 3px;
+  }
+
+  .label {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+
+  .name {
+    font-size: 1.65rem;
+  }
+
+  .role {
+    font-size: 1rem;
+  }
+
+  .bio {
+    font-size: 1rem;
+  }
+}
+
+/* Responsive: 480px */
+@media (max-width: 480px) {
+  .main {
+    padding: 90px 0 40px;
+  }
+
+  .row {
+    gap: 1.5rem 0;
+  }
+
+  .imageWrap {
+    max-width: 100%;
+    border-radius: 14px;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 14px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .bio p:nth-child(1) { animation-delay: 0.5s; }
+  .bio p:nth-child(2) { animation-delay: 0.6s; }
+  .bio p:nth-child(3) { animation-delay: 0.7s; }
+}

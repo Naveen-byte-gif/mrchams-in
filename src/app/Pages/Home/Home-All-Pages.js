@@ -11,7 +11,6 @@ import DesignApproach from "@/app/components/DesignApproach/DesignApproach";
 import DevelopmentProcess from "@/app/components/DevelopmentProcess/DevelopmentProcess";
 import HireBanner from "@/app/components/HireBanner/HireBanner";
 import Footer from "@/app/components/Footer/Footer";
-import AboutUs from "@/app/components/AboutUs/AboutUs";
 
 const HomeAllPages = () => {
   return (
@@ -19,10 +18,9 @@ const HomeAllPages = () => {
       <div className="">
         <Navbar />
         <HeroSection />
-        <AboutUs />
         <WayOfBuilding />
-        <DevelopmentProcess />
         <DesignApproach />
+        <DevelopmentProcess />
         {/* <WhyChooseUs /> */}
         {/* <OurServices /> */}
         <Projects />

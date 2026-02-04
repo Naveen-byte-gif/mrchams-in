@@ -88,6 +88,18 @@
   grid-column: span 4;
 }
 
+/* Project card as link - no default anchor styles */
+.project-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.project-card-link:hover {
+  color: inherit;
+}
+
 /* Project Card */
 .project-card {
   background-color: transparent;

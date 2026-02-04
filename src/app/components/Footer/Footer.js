@@ -8,7 +8,7 @@ const Footer = () => {
       <div className="container">
         <div className="row footer-content">
           {/* Left Column - Logo and Description */}
-          <div className="col-lg-4 col-md-6 col-12 footer-column footer-left">
+          <div className="col-lg-3 col-md-6 col-12 footer-column footer-left">
             <div className="footer-logo-wrapper">
               <div className="footer-logo-icon">
                 <Image
@@ -27,8 +27,31 @@ const Footer = () => {
             </p>
           </div>
 
+          {/* Our Services Column */}
+          <div className="col-lg-3 col-md-6 col-12 footer-column footer-services">
+            <h3 className="footer-heading">Our Services</h3>
+            <ul className="footer-services-list">
+              <li>
+                <span className="footer-service-item">Custom Software Development</span>
+                <span className="footer-service-desc"> – Web & mobile applications</span>
+              </li>
+              <li>
+                <span className="footer-service-item">Website Development</span>
+                <span className="footer-service-desc"> – Static, dynamic, e-commerce websites</span>
+              </li>
+              <li>
+                <span className="footer-service-item">Mobile App Development</span>
+                <span className="footer-service-desc"> – Android, iOS, Flutter, React Native</span>
+              </li>
+              <li>
+                <span className="footer-service-item">UI/UX Design</span>
+                <span className="footer-service-desc"> – App & website design, user experience</span>
+              </li>
+            </ul>
+          </div>
+
           {/* Middle Column - Contact Information */}
-          <div className="col-lg-4 col-md-6 col-12 footer-column footer-middle">
+          <div className="col-lg-3 col-md-6 col-12 footer-column footer-middle">
             <h3 className="footer-heading">Contact us</h3>
             <p className="footer-description">
               Reach out to our team for any inquiries or support:
@@ -47,7 +70,7 @@ const Footer = () => {
           </div>
 
           {/* Right Column - Office Address */}
-          <div className="col-lg-4 col-md-12 col-12 footer-column footer-right">
+          <div className="col-lg-3 col-md-12 col-12 footer-column footer-right">
             <div className="footer-location-icon-wrapper">
               <div className="footer-location-icon">
                 <Image

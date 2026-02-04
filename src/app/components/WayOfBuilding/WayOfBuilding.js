@@ -131,9 +131,9 @@ const WayOfBuilding = () => {
                     {...testimonialAnimation}
                   >
                     <p className="testimonial-text">
-                      "Sinfonia is quick to identify larger problems with the
-                      Software so we decided to expand our scope to build new
-                      modules."
+                      "Scaling used to mean hiring fast and hoping it stuck. With
+                      Mr.Chams we got a team that was ready from day one and
+                      stayed—no churn, no re-onboarding, just steady growth."
                     </p>
                   </motion.div>
                 </motion.div>
